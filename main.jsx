@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Link, Route, Routes, useNavigate } from "react-router-dom";
 
 const initialReports = [
   {
@@ -286,4 +287,10 @@ function Commissions({ reports, filter, setFilter, onStatus }) {
   );
 }
 
-export default App;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
